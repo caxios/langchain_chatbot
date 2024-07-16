@@ -73,8 +73,9 @@ def main():
 
     history = StreamlitChatMessageHistory(key="chat_messages")
 
+    query = st.chat_input("질문을 입력해주세요")
     # ':='는 사용자가 입력한 텍스트를 query에 반환
-    if query := st.chat_input("질문을 입력해주세요"): # 만약 질문을 입력하면
+    if query: # 만약 질문을 입력하면
         st.session_state.messages.append({"role":"user", "content":query})
 
         with st.chat_message("user"):
